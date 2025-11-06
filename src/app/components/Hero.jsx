@@ -60,21 +60,43 @@ export default function Hero() {
           into digital reality — using modern technologies.
         </p>
 
-        {/* Social Icons */}
+        {/* Social Icons with Links */}
         <div className="flex gap-5 mt-6 text-teal-700 text-2xl">
-          {[FaLinkedin, FaFacebook, FaTwitter, FaInstagram, FaGithub].map(
-            (Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="border-2 border-teal-700 rounded-full p-2
-                hover:bg-teal-700 hover:text-white transition duration-300"
-                target="_blank"
-              >
-                <Icon />
-              </a>
-            )
-          )}
+          <a
+            href="https://www.linkedin.com/in/tamanna-akter57/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://web.facebook.com/tamanna.sultana.sathi.2025/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://x.com/TamannaAkt43608"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.instagram.com/astamanna576/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://github.com/developerTamanna"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaGithub />
+          </a>
         </div>
 
         {/* Download CV Button */}
@@ -89,7 +111,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* ✅ Animation added inside component (No tailwind config needed) */}
+      {/* Floating Animation */}
       <style jsx global>{`
         @keyframes float {
           0%,

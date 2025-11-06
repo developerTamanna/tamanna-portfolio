@@ -1,4 +1,5 @@
-// Projects.jsx
+'use client';
+import Link from 'next/link';
 import {
   FaCode,
   FaExternalLinkAlt,
@@ -16,7 +17,6 @@ const projectsData = [
     frontend: '#',
     backend: '#',
     live: '#',
-    details: '#',
   },
   {
     id: 2,
@@ -27,7 +27,6 @@ const projectsData = [
     frontend: '#',
     backend: '#',
     live: '#',
-    details: '#',
   },
   {
     id: 3,
@@ -38,7 +37,6 @@ const projectsData = [
     frontend: '#',
     backend: '#',
     live: '#',
-    details: '#',
   },
 ];
 
@@ -70,33 +68,24 @@ const Projects = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mt-6">
-              <a
-                href={project.frontend}
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
+              <button className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2">
                 <FaCode /> Frontend
-              </a>
+              </button>
 
-              <a
-                href={project.backend}
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
+              <button className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2">
                 <FaServer /> Backend
-              </a>
+              </button>
 
-              <a
-                href={project.live}
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
+              <button className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2">
                 <FaExternalLinkAlt /> Live
-              </a>
+              </button>
 
-              <a
-                href={project.details}
+              <Link
+                href={`/projects/${project.id}`}
                 className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
               >
                 <FaInfoCircle /> Details
-              </a>
+              </Link>
             </div>
           </div>
         ))}
