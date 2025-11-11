@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -19,15 +19,24 @@ export default function Header() {
       <h1 className="text-3xl font-bold">Tamanna Akter</h1>
 
       {/* Mobile menu button */}
-      <div className="md:hidden" onClick={() => setOpen(!open)}>
-        <FiMenu className="text-3xl cursor-pointer" />
-      </div>
+      <button
+        className="md:hidden"
+        onClick={() => setOpen(!open)}
+        aria-label="Menu"
+      >
+        {open ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+      </button>
 
       {/* Navigation menu */}
       <nav
-        className={`${
-          open ? 'right-0' : '-right-full'
-        } absolute md:static top-full md:flex flex-col md:flex-row bg-[#007F73] w-[250px] md:w-auto min-h-screen md:min-h-0 transition-all duration-500 md:space-x-8 items-center`}
+        className={`absolute md:static top-[72px] right-0 md:right-auto
+        bg-[#007F73] flex flex-col md:flex-row
+        items-center md:space-x-8
+        transition-all duration-500
+        w-[250px] md:w-auto
+        min-h-screen md:min-h-0
+        ${open ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}
+        md:opacity-100 md:translate-x-0`}
       >
         {navItems.map((item) => (
           <Link
