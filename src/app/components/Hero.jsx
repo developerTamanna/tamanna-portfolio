@@ -54,21 +54,43 @@ export default function Hero() {
           into digital reality using modern technologies.
         </p>
 
-        {/* ✅ Social Icons */}
-        <div className="flex justify-center md:justify-start gap-4 sm:gap-5 mt-6 text-teal-700 text-xl sm:text-2xl flex-wrap">
-          {[FaLinkedin, FaFacebook, FaTwitter, FaInstagram, FaGithub].map(
-            (Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-teal-700 rounded-full p-2 sm:p-3 hover:bg-teal-700 hover:text-white transition duration-300"
-              >
-                <Icon />
-              </a>
-            )
-          )}
+        {/* Social Icons with Links */}
+        <div className="flex gap-5 mt-6 text-teal-700 text-2xl">
+          <a
+            href="https://www.linkedin.com/in/tamanna-akter57/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://web.facebook.com/tamanna.sultana.sathi.2025/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://x.com/TamannaAkt43608"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.instagram.com/astamanna576/"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://github.com/developerTamanna"
+            target="_blank"
+            className="border-2 border-teal-700 rounded-full p-2 hover:bg-teal-700 hover:text-white transition duration-300"
+          >
+            <FaGithub />
+          </a>
         </div>
 
         {/* ✅ Download CV Button */}
@@ -80,20 +102,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* ✅ Right Side Profile Image */}
-      <div className="flex justify-center items-center">
-        <div className="relative w-40 sm:w-52 md:w-64 lg:w-80 rounded-full overflow-hidden shadow-[0_0_20px_theme(colors.teal.600)] hover:shadow-[0_0_30px_theme(colors.teal.600),0_0_45px_theme(colors.teal.600)] cursor-pointer transition duration-500 float-animation">
-          <Image
-            src="/profile.png"
-            alt="Tamanna Akter"
-            width={400}
-            height={400}
-            className="rounded-full w-full h-auto object-cover"
-          />
-        </div>
-      </div>
-
-      {/* ✅ Float Animation */}
+      {/* Floating Animation */}
       <style jsx global>{`
         @keyframes float {
           0%,
