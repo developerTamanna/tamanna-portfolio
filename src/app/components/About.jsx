@@ -10,7 +10,7 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16">
         {/* ✅ Left Side — Image */}
-        <div className="relative w-60 sm:w-72 md:w-[24rem] lg:w-[26rem] aspect-square overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,127,115,0.3)] border-4 border-[#007F73] hover:shadow-[0_0_40px_rgba(0,127,115,0.5)] transition duration-500">
+        <div className="relative w-60 sm:w-72 md:w-[24rem] lg:w-[26rem] aspect-square overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,127,115,0.3)] hover:shadow-[0_0_40px_rgba(0,127,115,0.5)] transition duration-500">
           <Image
             src="/about.jpg"
             alt="About"
