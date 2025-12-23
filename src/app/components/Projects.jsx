@@ -11,11 +11,11 @@ const projectsData = [
   {
     id: 1,
     title: 'Services-Stores',
-    image: '/p1.jpg',
+    image: '/ServicePoint.jpg',
     description:
       'A versatile platform where users can discover, manage, and review various services with a smooth interface.',
     frontend: 'https://github.com/developerTamanna/services-stores-client',
-    backend: '#',
+    backend: 'https://github.com/developerTamanna/services-stores-server',
     live: 'https://services-store-app.web.app/',
   },
   {

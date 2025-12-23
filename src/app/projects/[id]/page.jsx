@@ -16,9 +16,9 @@ const projectsData = [
       'Express',
       'MongoDB',
     ],
-    frontend: '#',
-    backend: '#',
-    live: '#',
+    frontend: 'https://github.com/developerTamanna/services-stores-client',
+    backend: 'https://github.com/developerTamanna/services-stores-server',
+    live: 'https://services-store-app.web.app/',
   },
   {
     id: 2,
@@ -27,9 +27,9 @@ const projectsData = [
     description:
       'This project is a secure Matrimony website that helps users find their perfect match with advanced filters and privacy controls. Admin dashboard included for management.',
     technologies: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Firebase Auth'],
-    frontend: '#',
-    backend: '#',
-    live: '#',
+    frontend: 'https://github.com/developerTamanna/matrimony-platform-client',
+    backend: 'https://github.com/developerTamanna/matrimony-platform-server',
+    live: 'https://matrimony-platform-df764.web.app/',
   },
 ];
 
