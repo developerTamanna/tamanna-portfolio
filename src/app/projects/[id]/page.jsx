@@ -125,69 +125,77 @@ export default function ProjectDetailsPage() {
               Project Links
             </h3>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href={project.frontend}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3 rounded-lg bg-[#007F73] text-white hover:bg-[#005f56] transition-colors duration-200 border border-[#007F73]"
-              >
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {project.frontend && project.frontend !== '#' && (
+                <a
+                  href={project.frontend}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-[#007F73] text-white hover:bg-[#005f56] transition-colors duration-200 border border-[#007F73]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-                Frontend Code
-              </a>
-              <a
-                href={project.backend}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
-              >
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                  Frontend Code
+                </a>
+              )}
+
+              {project.backend && project.backend !== '#' && (
+                <a
+                  href={project.backend}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 12h14M12 5l7 7-7 7"
-                  />
-                </svg>
-                Backend Code
-              </a>
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
-              >
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                  Backend Code
+                </a>
+              )}
+
+              {project.live && project.live !== '#' && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-                Live Demo
-              </a>
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Live Demo
+                </a>
+              )}
             </div>
           </div>
         </div>
