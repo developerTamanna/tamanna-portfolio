@@ -1,19 +1,30 @@
 'use client';
+import Head from 'next/head';
 import { useParams, useRouter } from 'next/navigation';
 
 const projectsData = [
   {
     id: 1,
     title: 'Services-Stores',
-    images: ['/p1.jpg', '/p1-mobile.jpg'],
+    images: ['/service3.png', '/services2.png'],
     description:
-      '“Services-Stores” is a modern platform where users can discover, manage, and review various services effortlessly. The design focuses on user experience, responsive layout, and real-time interaction. and.',
+      'A versatile platform where users can discover, manage, and review various services, ranging from freelancing to digital and personal offerings.',
+    features: [
+      'Users can explore a wide range of services including freelancing, digital, and personal service listings.',
+      'Users can leave reviews on services to help others make informed decisions.',
+      'Ensures dynamic interactivity and smooth user engagement.',
+      'Fully responsive design optimized for mobile, tablet, and desktop devices.',
+      'Smooth scrolling and scroll-based animations.',
+      'SEO-friendly structure with a modern UI.',
+    ],
     technologies: [
       'React.js',
       'Tailwind CSS',
-      'Firebase',
+      'DaisyUI',
+      'React Router',
+      'Firebase Authentication',
       'Node.js',
-      'Express',
+      'Express.js',
       'MongoDB',
     ],
     frontend: 'https://github.com/developerTamanna/services-stores-client',
@@ -23,13 +34,56 @@ const projectsData = [
   {
     id: 2,
     title: 'Matrimony Platform',
-    images: ['/project2.png', '/project2-mobile.png'],
+    images: ['/mt1.png', '/mt2.png'],
     description:
-      'This project is a secure Matrimony website that helps users find their perfect match with advanced filters and privacy controls. Admin dashboard included for management.',
-    technologies: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Firebase Auth'],
+      'A modern matrimony website designed to help individuals find their ideal life partner securely.',
+    features: [
+      'Create, update, and delete profiles.',
+      'Advanced search & filters.',
+      'Secure payment system.',
+      'Privacy-focused user data protection.',
+      'Admin dashboard included.',
+    ],
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Firebase Authentication',
+      'Vercel',
+    ],
     frontend: 'https://github.com/developerTamanna/matrimony-platform-client',
     backend: 'https://github.com/developerTamanna/matrimony-platform-server',
     live: 'https://matrimony-platform-df764.web.app/',
+  },
+  {
+    id: 3,
+    title: 'Sazin Construction Ltd – Real Time Web Application',
+    images: ['/szn3.png', '/szn2.png'],
+    description:
+      'A real-time construction company website to showcase services, projects, and company news with SEO optimization.',
+    features: [
+      'Service & project showcase.',
+      'Real-time updates.',
+      'SEO-friendly architecture.',
+      'Secure authentication.',
+      'Fully responsive design.',
+      'Modern UI & smooth interaction.',
+    ],
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'Express.js',
+      'MongoDB',
+      'REST API',
+      'Authentication',
+    ],
+    frontend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+    backend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
   },
 ];
 
@@ -38,168 +92,136 @@ export default function ProjectDetailsPage() {
   const router = useRouter();
   const project = projectsData.find((p) => p.id === Number(id));
 
-  if (!project)
+  if (!project) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <h2 className="text-2xl text-gray-600">Project not found.</h2>
+      <div className="min-h-screen flex items-center justify-center">
+        Not Found
       </div>
     );
+  }
 
   return (
-    <div className="min-h-screen bg-white py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Back Button */}
-        <div className="mb-8">
+    <>
+      {/* ✅ SEO */}
+      <Head>
+        <title>{project.title} | Tamanna Akter Portfolio</title>
+        <meta name="description" content={project.description} />
+        <meta property="og:title" content={project.title} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:image" content={project.images[0]} />
+      </Head>
+
+      <div className="min-h-screen bg-white py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Back */}
           <button
             onClick={() => router.push('/')}
-            className="flex items-center text-gray-600 hover:text-[#007F73] transition-colors duration-200 group"
+            className="mb-8 text-gray-600 hover:text-[#007F73]"
           >
-            <svg
-              className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Back to Projects
+            ← Back to Projects
           </button>
-        </div>
 
-        {/* Main Content */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
-          {/* Title */}
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#007F73] mb-6 text-center">
-            {project.title}
-          </h1>
-
-          {/* Description */}
-          <div className="mb-8">
-            <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-              {project.description}
-            </p>
-          </div>
-
-          {/* Screenshots */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            {project.images.map((img, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50"
-              >
-                <img
-                  src={img}
-                  alt={`${project.title} Screenshot ${index + 1}`}
-                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Technologies Used */}
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-              <span className="w-2 h-2 bg-[#007F73] rounded-full mr-3"></span>
-              Technologies Used
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium border border-gray-200 hover:border-[#007F73] transition-colors duration-200"
+          {/* Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* ✅ Sticky Image Gallery */}
+            <div className="lg:sticky lg:top-24 h-fit space-y-6">
+              {project.images.map((img, i) => (
+                <div
+                  key={i}
+                  className="overflow-hidden rounded-xl border border-gray-200"
                 >
-                  {tech}
-                </span>
+                  <img
+                    src={img}
+                    alt={project.title}
+                    className="w-full hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               ))}
             </div>
-          </div>
 
-          {/* Project Links */}
-          <div className="border-t border-gray-200 pt-8">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-              Project Links
-            </h3>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              {project.frontend && project.frontend !== '#' && (
-                <a
-                  href={project.frontend}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-[#007F73] text-white hover:bg-[#005f56] transition-colors duration-200 border border-[#007F73]"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
-                  Frontend Code
-                </a>
-              )}
+            {/* Right Content */}
+            <div>
+              <h1 className="text-3xl font-bold text-[#007F73] mb-4">
+                {project.title}
+              </h1>
 
-              {project.backend && project.backend !== '#' && (
-                <a
-                  href={project.backend}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 12h14M12 5l7 7-7 7"
-                    />
-                  </svg>
-                  Backend Code
-                </a>
-              )}
+              <p className="text-gray-600 mb-8">{project.description}</p>
 
-              {project.live && project.live !== '#' && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center px-6 py-3 rounded-lg bg-white text-[#007F73] border border-[#007F73] hover:bg-[#007F73] hover:text-white transition-colors duration-200"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+              {/* Features */}
+              <h2 className="text-xl font-semibold mb-4">Key Features</h2>
+              <ul className="space-y-3 mb-8">
+                {project.features.map((f, i) => (
+                  <li key={i} className="flex gap-3 text-gray-600">
+                    <span className="w-2 h-2 mt-2 bg-[#007F73] rounded-full"></span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech */}
+              <h2 className="text-xl font-semibold mb-4">Technologies</h2>
+              <div className="flex flex-wrap gap-3 mb-10">
+                {project.technologies.map((t, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 bg-gray-100 rounded-lg text-sm border"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                  Live Demo
-                </a>
-              )}
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex gap-4 flex-wrap">
+                {project.frontend && (
+                  <a
+                    href={project.frontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center px-6 py-3 rounded-lg
+      bg-[#007F73] text-white
+      hover:bg-[#005f56]
+      transition-colors duration-200
+      border border-[#007F73]"
+                  >
+                    Frontend Code
+                  </a>
+                )}
+
+                {project.backend && (
+                  <a
+                    href={project.backend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center px-6 py-3 rounded-lg
+      bg-white text-[#007F73]
+      border border-[#007F73]
+      hover:bg-[#007F73] hover:text-white
+      transition-colors duration-200"
+                  >
+                    Backend Code
+                  </a>
+                )}
+
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center px-6 py-3 rounded-lg
+      bg-white text-[#007F73]
+      border border-[#007F73]
+      hover:bg-[#007F73] hover:text-white
+      transition-colors duration-200"
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

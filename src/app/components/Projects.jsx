@@ -30,13 +30,15 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'Play Store Inspired',
-    image: '/p3.jpg',
+    title: 'Sazin Construction Ltd – Real Time Application',
+    image: '/sazinp.png',
     description:
-      'A Play Store-like platform where users can explore apps, rate them and post reviews using Firebase authentication.',
-    frontend: '#',
-    backend: '#',
-    live: '#',
+      'A real-time construction company website where users can explore services, view project updates, and read company news. The platform is SEO-friendly and dynamically managed using a modern full-stack architecture.',
+    frontend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+    backend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
   },
 ];
 
