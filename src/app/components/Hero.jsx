@@ -30,7 +30,7 @@ export default function Hero() {
     <section id="home" className="min-h-screen pt-24 md:pt-0 pb-10 md:pb-0 flex items-center">
       <div
         className="
-          max-w-7xl mx-auto px-6
+          max-w-7xl mx-auto md:px-10 px-6
           flex flex-col-reverse md:flex-row
           items-center
           justify-center md:justify-between
