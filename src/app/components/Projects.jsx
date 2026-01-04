@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import {
   FaCode,
@@ -13,7 +14,7 @@ const projectsData = [
     title: 'Services-Stores',
     image: '/ServicePoint.jpg',
     description:
-      'A versatile platform where users can discover, manage, and review various services with a smooth interface.',
+      'Service listing platform where users can discover, manage and review services through a clean and user-friendly interface.',
     frontend: 'https://github.com/developerTamanna/services-stores-client',
     backend: 'https://github.com/developerTamanna/services-stores-server',
     live: 'https://services-store-app.web.app/',
@@ -23,7 +24,7 @@ const projectsData = [
     title: 'Matrimony Platform',
     image: '/project2.png',
     description:
-      'A modern matrimony website that helps individuals find their ideal match with privacy and powerful search filters.',
+      'Modern matrimony web application with secure authentication, privacy-focused features and advanced search filters.',
     frontend: 'https://github.com/developerTamanna/matrimony-platform-client',
     backend: 'https://github.com/developerTamanna/matrimony-platform-server',
     live: 'https://matrimony-platform-df764.web.app/',
@@ -33,79 +34,102 @@ const projectsData = [
     title: 'Sazin Construction Ltd – Real Time Application',
     image: '/sazinp.png',
     description:
-      'A real-time construction company website where users can explore services, view project updates, and read company news. The platform is SEO-friendly and dynamically managed using a modern full-stack architecture.',
+      'Real-time construction company website featuring services, project updates and company news built with a modern full-stack architecture.',
     frontend:
       'https://github.com/developerTamanna/sazin-group-construction-Ltd',
     backend:
       'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
     live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
   },
+  {
+    id: 4,
+    title: 'Sazin Construction Admin Dashboard',
+    image: '/sznadmin2.png',
+    description:
+      'Admin dashboard to manage projects, users and content with real-time updates and analytics.',
+    frontend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+  },
 ];
+
+const buttonClass =
+  'inline-flex items-center gap-2 bg-[#007F73] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#00665c] transition-colors duration-300';
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-[#d5fdf9] py-20 px-4 md:px-12">
-      <h2 className="text-5xl font-bold text-center mb-20">
-        My <span className="text-teal-600">Projects</span>
-      </h2>
+    <section id="projects" className="bg-[#f9fafb] py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-semibold text-center text-gray-900 mb-14">
+          Selected <span className="text-gray-500">Projects</span>
+        </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1200px] mx-auto">
-        {projectsData.map((project) => (
-          <div
-            key={project.id}
-            className="min-h-[500px] bg-white rounded-3xl shadow-lg hover:shadow-[0_0_25px_rgba(20,184,166,0.8)] transition-all duration-500 border border-transparent hover:border-teal-600 flex flex-col justify-between p-6"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full rounded-xl border-4 border-teal-600 shadow-[0_0_20px_rgba(5,150,105,0.7)] object-cover"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {projectsData.map((project) => (
+            <div
+              key={project.id}
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition"
+            >
+              {/* IMAGE */}
+              <div className="h-60 bg-gray-100 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                />
+              </div>
 
-            <h3 className="text-3xl font-semibold text-center mt-5">
-              {project.title}
-            </h3>
+              {/* CONTENT */}
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {project.title}
+                </h3>
 
-            <p className="text-lg text-gray-600 text-center mt-2 flex-grow">
-              {project.description}
-            </p>
+                <p className="text-sm text-gray-600 mt-3 leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
 
-            <div className="flex flex-wrap justify-center gap-3 mt-6">
-              <a
-                href={project.frontend}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
-                <FaCode /> Frontend
-              </a>
+                {/* BUTTONS */}
+                <div className="flex flex-wrap gap-4 mt-6">
+                  <a
+                    href={project.frontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonClass}
+                  >
+                    <FaCode /> Frontend
+                  </a>
 
-              <a
-                href={project.backend}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
-                <FaServer /> Backend
-              </a>
+                  <a
+                    href={project.backend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonClass}
+                  >
+                    <FaServer /> Backend
+                  </a>
 
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
-                <FaExternalLinkAlt /> Live
-              </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonClass}
+                  >
+                    <FaExternalLinkAlt /> Live
+                  </a>
 
-              <Link
-                href={`/projects/${project.id}`}
-                className="px-6 py-2 rounded-lg bg-teal-600 text-white hover:bg-transparent hover:text-teal-600 hover:border-teal-600 border transition flex items-center gap-2"
-              >
-                <FaInfoCircle /> Details
-              </Link>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className={buttonClass}
+                  >
+                    <FaInfoCircle /> Details
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

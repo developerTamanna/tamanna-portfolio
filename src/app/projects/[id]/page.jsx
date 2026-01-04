@@ -85,6 +85,35 @@ const projectsData = [
       'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
     live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
   },
+  {
+    id: 4,
+    title: 'Sazin Construction LTD – Admin Dashboard User Manual',
+    images: ['/sznadmin1.png', '/sznadmin2.png'],
+    description:
+      'Admin user manual for Sazin Construction LTD website. This guide explains how administrators can access the dashboard, manage users, and assign new admin roles securely. email: marufahmmed16@gmail.com pass: Maruf2131@',
+
+    features: [
+      'Admin dashboard access with secure login.',
+      'Default admin credentials provided for initial access.',
+      'Ability to register new admin accounts.',
+      'Existing admin approval required to activate new admin users.',
+      'Role-based access control for managing projects and content.',
+      'Real-time admin management workflow.',
+    ],
+    technologies: [
+      'Next.js',
+      'Tailwind CSS',
+      'Firebase Authentication',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT Authentication',
+    ],
+    frontend:
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+  },
 ];
 
 export default function ProjectDetailsPage() {
