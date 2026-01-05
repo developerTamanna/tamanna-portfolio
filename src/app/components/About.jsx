@@ -44,7 +44,7 @@ export default function About() {
         </h2>
 
         <h3 className="text-2xl md:text-3xl mt-4 font-semibold text-gray-700">
-          I'm a <span className="text-[#007F73]">MERN Stack Developer</span>
+          I&apos;m a <span className="text-[#007F73]">MERN Stack Developer</span>
         </h3>
 
         <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">

@@ -20,26 +20,41 @@ export default function Services({ hideTitle = false }) {
   ];
 
   return (
-    <section id="services" className="py-20 px-8">
-      {/* Conditional Title - শুধু show করবে যখন hideTitle false */}
-      {!hideTitle && (
-        <h2 className="text-center text-5xl font-bold mb-12">
-          My <span className="text-[#007F73]">Services</span>
-        </h2>
-      )}
+    <section id="services" className="py-20">
+      {/* ✅ Same width as Navbar & Hero */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        
+        {!hideTitle && (
+          <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
+            My <span className="text-[#007F73]">Services</span>
+          </h2>
+        )}
 
-      <div className="flex flex-wrap justify-center gap-8">
-        {services.map((service, i) => (
-          <div
-            key={i}
-            className="bg-[#d5fdf9] border-2 border-white rounded-3xl p-8 w-full max-w-xs text-center
-                       hover:border-[#007F73] hover:scale-105 transition-transform duration-300"
-          >
-            <div className="text-6xl text-[#007F73] mb-5">{service.icon}</div>
-            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-            <p className="text-gray-700">{service.description}</p>
-          </div>
-        ))}
+        {/* ✅ Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className="bg-[#d5fdf9] border-2 border-white rounded-3xl p-8
+                         w-full max-w-sm text-center
+                         hover:border-[#007F73] hover:scale-105
+                         transition-all duration-300"
+            >
+              {/* ✅ Icon perfectly centered */}
+              <div className="flex justify-center mb-5 text-6xl text-[#007F73]">
+                {service.icon}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-3">
+                {service.title}
+              </h3>
+
+              <p className="text-gray-700">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
