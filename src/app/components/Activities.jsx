@@ -31,14 +31,23 @@ const activitiesData = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
 export default function Activities() {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 sm:px-6">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -46,53 +55,50 @@ export default function Activities() {
           <h2 className="text-3xl sm:text-5xl font-bold text-[#007F73] mb-3">
             Activities
           </h2>
-          <div className="w-16 h-0.5 bg-[#007F73] mx-auto" />
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <div className="w-16 h-[2px] bg-[#007F73] mx-auto" />
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
             Consistent learning, community engagement, and development activity
           </p>
         </motion.div>
 
         {/* Activities */}
-        <div className="space-y-20">
+        <div className="space-y-24">
           {activitiesData.map((item, index) => (
             <motion.div
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               {/* Image */}
               <div
-                className="relative w-full h-[260px] sm:h-[320px] lg:h-[360px]
-                              rounded-xl overflow-hidden border border-teal-100 shadow-sm"
+                className={`relative w-full h-[260px] sm:h-[320px] lg:h-[360px]
+                rounded-2xl overflow-hidden border border-teal-100 shadow-sm
+                ${index % 2 !== 0 ? 'lg:order-2' : ''}`}
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority={index === 0}
                 />
               </div>
 
-              {/* Content Card */}
+              {/* Content */}
               <div
-                className="bg-white rounded-xl border border-teal-100
-                              p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className={`bg-white rounded-2xl border border-teal-100 p-8
+                shadow-sm hover:shadow-md transition-all duration-300
+                ${index % 2 !== 0 ? 'lg:order-1' : ''}`}
               >
                 <div className="flex items-center justify-between mb-5">
                   <h3 className="text-2xl font-semibold text-[#007F73]">
                     {item.title}
                   </h3>
-                  <span
-                    className="text-sm px-2 py-1 bg-teal-50 text-[#007F73]
-                                   rounded border border-teal-100"
-                  >
+                  <span className="text-xs px-3 py-1 bg-teal-50 text-[#007F73] rounded-full border border-teal-100">
                     {item.badge}
                   </span>
                 </div>
@@ -106,10 +112,12 @@ export default function Activities() {
                 <a
                   href={item.link}
                   target="_blank"
-                  className="inline-block bg-[#007F73] text-white
-                             px-7 py-3 rounded-lg font-semibold
-                             hover:bg-[#00665c]
-                             transition-colors duration-300"
+                  rel="noopener noreferrer"
+                  aria-label={item.linkText}
+                  className="inline-flex items-center justify-center
+                             bg-[#007F73] text-white px-8 py-3 rounded-lg
+                             font-semibold hover:bg-[#00665c]
+                             transition-all duration-300 hover:scale-[1.03]"
                 >
                   {item.linkText}
                 </a>
