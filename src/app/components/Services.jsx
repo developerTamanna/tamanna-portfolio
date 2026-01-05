@@ -21,7 +21,7 @@ export default function Services({ hideTitle = false }) {
 
   return (
     <section id="services" className="py-20">
-      {/* ✅ Same width as Navbar & Hero */}
+
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         
         {!hideTitle && (
@@ -30,7 +30,6 @@ export default function Services({ hideTitle = false }) {
           </h2>
         )}
 
-        {/* ✅ Responsive Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
           {services.map((service, i) => (
             <div
@@ -40,7 +39,7 @@ export default function Services({ hideTitle = false }) {
                          hover:border-[#007F73] hover:scale-105
                          transition-all duration-300"
             >
-              {/* ✅ Icon perfectly centered */}
+ 
               <div className="flex justify-center mb-5 text-6xl text-[#007F73]">
                 {service.icon}
               </div>
