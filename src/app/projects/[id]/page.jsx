@@ -1,118 +1,119 @@
-'use client';
-import Head from 'next/head';
-import { useParams, useRouter } from 'next/navigation';
+"use client";
+import Head from "next/head";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
 
 const projectsData = [
   {
     id: 1,
-    title: 'Services-Stores',
-    images: ['/service3.png', '/services2.png'],
+    title: "Services-Stores",
+    images: ["/service3.png", "/services2.png"],
     description:
-      'A versatile platform where users can discover, manage, and review various services, ranging from freelancing to digital and personal offerings.',
+      "A versatile platform where users can discover, manage, and review various services, ranging from freelancing to digital and personal offerings.",
     features: [
-      'Users can explore a wide range of services including freelancing, digital, and personal service listings.',
-      'Users can leave reviews on services to help others make informed decisions.',
-      'Ensures dynamic interactivity and smooth user engagement.',
-      'Fully responsive design optimized for mobile, tablet, and desktop devices.',
-      'Smooth scrolling and scroll-based animations.',
-      'SEO-friendly structure with a modern UI.',
+      "Users can explore a wide range of services including freelancing, digital, and personal service listings.",
+      "Users can leave reviews on services to help others make informed decisions.",
+      "Ensures dynamic interactivity and smooth user engagement.",
+      "Fully responsive design optimized for mobile, tablet, and desktop devices.",
+      "Smooth scrolling and scroll-based animations.",
+      "SEO-friendly structure with a modern UI.",
     ],
     technologies: [
-      'React.js',
-      'Tailwind CSS',
-      'DaisyUI',
-      'React Router',
-      'Firebase Authentication',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
+      "React.js",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React Router",
+      "Firebase Authentication",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
     ],
-    frontend: 'https://github.com/developerTamanna/services-stores-client',
-    backend: 'https://github.com/developerTamanna/services-stores-server',
-    live: 'https://services-store-app.web.app/',
+    frontend: "https://github.com/developerTamanna/services-stores-client",
+    backend: "https://github.com/developerTamanna/services-stores-server",
+    live: "https://services-store-app.web.app/",
   },
   {
     id: 2,
-    title: 'Matrimony Platform',
-    images: ['/mt1.png', '/mt2.png'],
+    title: "Matrimony Platform",
+    images: ["/mt1.png", "/mt2.png"],
     description:
-      'A modern matrimony website designed to help individuals find their ideal life partner securely.',
+      "A modern matrimony website designed to help individuals find their ideal life partner securely.",
     features: [
-      'Create, update, and delete profiles.',
-      'Advanced search & filters.',
-      'Secure payment system.',
-      'Privacy-focused user data protection.',
-      'Admin dashboard included.',
+      "Create, update, and delete profiles.",
+      "Advanced search & filters.",
+      "Secure payment system.",
+      "Privacy-focused user data protection.",
+      "Admin dashboard included.",
     ],
     technologies: [
-      'Next.js',
-      'Tailwind CSS',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'Firebase Authentication',
-      'Vercel',
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase Authentication",
+      "Vercel",
     ],
-    frontend: 'https://github.com/developerTamanna/matrimony-platform-client',
-    backend: 'https://github.com/developerTamanna/matrimony-platform-server',
-    live: 'https://matrimony-platform-df764.web.app/',
+    frontend: "https://github.com/developerTamanna/matrimony-platform-client",
+    backend: "https://github.com/developerTamanna/matrimony-platform-server",
+    live: "https://matrimony-platform-df764.web.app/",
   },
   {
     id: 3,
-    title: 'Sazin Construction Ltd – Real Time Web Application',
-    images: ['/szn3.png', '/szn2.png'],
+    title: "Sazin Construction Ltd – Real Time Web Application",
+    images: ["/szn3.png", "/szn2.png"],
     description:
-      'A real-time construction company website to showcase services, projects, and company news with SEO optimization.',
+      "A real-time construction company website to showcase services, projects, and company news with SEO optimization.",
     features: [
-      'Service & project showcase.',
-      'Real-time updates.',
-      'SEO-friendly architecture.',
-      'Secure authentication.',
-      'Fully responsive design.',
-      'Modern UI & smooth interaction.',
+      "Service & project showcase.",
+      "Real-time updates.",
+      "SEO-friendly architecture.",
+      "Secure authentication.",
+      "Fully responsive design.",
+      "Modern UI & smooth interaction.",
     ],
     technologies: [
-      'Next.js',
-      'Tailwind CSS',
-      'Express.js',
-      'MongoDB',
-      'REST API',
-      'Authentication',
+      "Next.js",
+      "Tailwind CSS",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+      "Authentication",
     ],
     frontend:
-      'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+      "https://github.com/developerTamanna/sazin-group-construction-Ltd",
     backend:
-      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
-    live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
+      "https://github.com/developerTamanna/sazin-group-construction-Ltd-backend",
+    live: "https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/",
   },
   {
     id: 4,
-    title: 'Sazin Construction LTD – Admin Dashboard User Manual',
-    images: ['/sznadmin1.png', '/sznadmin2.png'],
+    title: "Sazin Construction LTD – Admin Dashboard User Manual",
+    images: ["/sznadmin1.png", "/sznadmin2.png"],
     description:
-      'Admin user manual for Sazin Construction LTD website. This guide explains how administrators can access the dashboard, manage users, and assign new admin roles securely. email: marufahmmed16@gmail.com pass: Maruf2131@',
+      "Admin user manual for Sazin Construction LTD website. This guide explains how administrators can access the dashboard, manage users, and assign new admin roles securely. email: marufahmmed16@gmail.com pass: Maruf2131@",
 
     features: [
-      'Admin dashboard access with secure login.',
-      'Default admin credentials provided for initial access.',
-      'Ability to register new admin accounts.',
-      'Existing admin approval required to activate new admin users.',
-      'Role-based access control for managing projects and content.',
-      'Real-time admin management workflow.',
+      "Admin dashboard access with secure login.",
+      "Default admin credentials provided for initial access.",
+      "Ability to register new admin accounts.",
+      "Existing admin approval required to activate new admin users.",
+      "Role-based access control for managing projects and content.",
+      "Real-time admin management workflow.",
     ],
     technologies: [
-      'Next.js',
-      'Tailwind CSS',
-      'Firebase Authentication',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'JWT Authentication',
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase Authentication",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Authentication",
     ],
     frontend:
-      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
-    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
-    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+      "https://github.com/developerTamanna/sazin-group-construction-Ltd-backend",
+    backend: "https://github.com/developerTamanna/sazin-group-construction-Ltd",
+    live: "https://sazin-group-construction-ltd-backen.vercel.app/",
   },
 ];
 
@@ -144,7 +145,7 @@ export default function ProjectDetailsPage() {
         <div className="max-w-6xl mx-auto">
           {/* Back */}
           <button
-            onClick={() => router.push('/')}
+            onClick={() => router.push("/")}
             className="mb-8 text-gray-600 hover:text-[#007F73]"
           >
             ← Back to Projects
@@ -157,12 +158,17 @@ export default function ProjectDetailsPage() {
               {project.images.map((img, i) => (
                 <div
                   key={i}
-                  className="overflow-hidden rounded-xl border border-gray-200"
+                  className="relative w-full h-[260px] sm:h-[360px] lg:h-[420px]
+                 overflow-hidden rounded-xl border border-gray-200"
                 >
-                  <img
+                  <Image
                     src={img}
                     alt={project.title}
-                    className="w-full hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover object-top
+                   transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={i === 0}
                   />
                 </div>
               ))}
