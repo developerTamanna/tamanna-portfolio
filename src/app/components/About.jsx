@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -44,7 +44,8 @@ export default function About() {
         </h2>
 
         <h3 className="text-2xl md:text-3xl mt-4 font-semibold text-gray-700">
-          I&apos;m a <span className="text-[#007F73]">MERN Stack Developer</span>
+          I&apos;m a{' '}
+          <span className="text-[#007F73]">MERN Stack Developer</span>
         </h3>
 
         <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
@@ -57,7 +58,7 @@ export default function About() {
         </p>
 
         <a
-          href="#"
+          href="/about-more"
           className="
             inline-block mt-6
             bg-[#007F73] text-white
