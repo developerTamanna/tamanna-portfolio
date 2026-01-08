@@ -45,7 +45,7 @@ const projectsData = [
   {
     id: 4,
     title: 'Sazin Construction – Admin Dashboard',
-    image: '/sznadmin2.png',
+    image: '/sznadmnn.png',
     description:
       'Admin dashboard to manage projects, users and content with analytics and real-time updates.',
     frontend:
@@ -55,18 +55,17 @@ const projectsData = [
   },
   {
     id: 5,
-    title: 'Construction CRM System',
-    image: '/sznadmin2.png',
+    title: 'Life Care Hospital System',
+    image: '/lifecare1.png',
     description:
-      'CRM system for handling clients, project workflow and internal team collaboration.',
-    frontend:
-      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
-    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
-    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+      'Life‑Care is a responsive healthcare‑related project showcasing my skills in UI design, frontend development, and modern JavaScript frameworks. Built to deliver a clean, intuitive user experience',
+    frontend: 'https://github.com/developerTamanna/life-care',
+    // backend: 'https://github.com/developerTamanna/life-care',
+    live: 'https://life-care-peach.vercel.app/',
   },
   {
     id: 6,
-    title: 'Enterprise Management Dashboard',
+    title: 'Real Time Chat Application',
     image: '/sznadmin2.png',
     description:
       'Enterprise-level dashboard for managing operations, reports and system roles.',
@@ -143,7 +142,10 @@ const Projects = () => {
                     <FaExternalLinkAlt /> Live
                   </a>
 
-                  <Link href={`/projects/${project.id}`} className={buttonClass}>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className={buttonClass}
+                  >
                     <FaInfoCircle /> Details
                   </Link>
                 </div>

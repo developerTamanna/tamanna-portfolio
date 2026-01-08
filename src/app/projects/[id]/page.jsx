@@ -1,119 +1,163 @@
-"use client";
-import Head from "next/head";
-import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
+'use client';
+import Head from 'next/head';
+import Image from 'next/image';
+import { useParams, useRouter } from 'next/navigation';
 
 const projectsData = [
   {
     id: 1,
-    title: "Services-Stores",
-    images: ["/service3.png", "/services2.png"],
+    title: 'Services-Stores',
+    images: ['/service3.png', '/services2.png'],
     description:
-      "A versatile platform where users can discover, manage, and review various services, ranging from freelancing to digital and personal offerings.",
+      'A versatile platform where users can discover, manage, and review various services, ranging from freelancing to digital and personal offerings.',
     features: [
-      "Users can explore a wide range of services including freelancing, digital, and personal service listings.",
-      "Users can leave reviews on services to help others make informed decisions.",
-      "Ensures dynamic interactivity and smooth user engagement.",
-      "Fully responsive design optimized for mobile, tablet, and desktop devices.",
-      "Smooth scrolling and scroll-based animations.",
-      "SEO-friendly structure with a modern UI.",
+      'Users can explore a wide range of services including freelancing, digital, and personal service listings.',
+      'Users can leave reviews on services to help others make informed decisions.',
+      'Ensures dynamic interactivity and smooth user engagement.',
+      'Fully responsive design optimized for mobile, tablet, and desktop devices.',
+      'Smooth scrolling and scroll-based animations.',
+      'SEO-friendly structure with a modern UI.',
     ],
     technologies: [
-      "React.js",
-      "Tailwind CSS",
-      "DaisyUI",
-      "React Router",
-      "Firebase Authentication",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
+      'React.js',
+      'Tailwind CSS',
+      'DaisyUI',
+      'React Router',
+      'Firebase Authentication',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
     ],
-    frontend: "https://github.com/developerTamanna/services-stores-client",
-    backend: "https://github.com/developerTamanna/services-stores-server",
-    live: "https://services-store-app.web.app/",
+    frontend: 'https://github.com/developerTamanna/services-stores-client',
+    backend: 'https://github.com/developerTamanna/services-stores-server',
+    live: 'https://services-store-app.web.app/',
   },
   {
     id: 2,
-    title: "Matrimony Platform",
-    images: ["/mt1.png", "/mt2.png"],
+    title: 'Matrimony Platform',
+    images: ['/mt1.png', '/mt2.png'],
     description:
-      "A modern matrimony website designed to help individuals find their ideal life partner securely.",
+      'A modern matrimony website designed to help individuals find their ideal life partner securely.',
     features: [
-      "Create, update, and delete profiles.",
-      "Advanced search & filters.",
-      "Secure payment system.",
-      "Privacy-focused user data protection.",
-      "Admin dashboard included.",
+      'Create, update, and delete profiles.',
+      'Advanced search & filters.',
+      'Secure payment system.',
+      'Privacy-focused user data protection.',
+      'Admin dashboard included.',
     ],
     technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Firebase Authentication",
-      "Vercel",
+      'Next.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Firebase Authentication',
+      'Vercel',
     ],
-    frontend: "https://github.com/developerTamanna/matrimony-platform-client",
-    backend: "https://github.com/developerTamanna/matrimony-platform-server",
-    live: "https://matrimony-platform-df764.web.app/",
+    frontend: 'https://github.com/developerTamanna/matrimony-platform-client',
+    backend: 'https://github.com/developerTamanna/matrimony-platform-server',
+    live: 'https://matrimony-platform-df764.web.app/',
   },
   {
     id: 3,
-    title: "Sazin Construction Ltd – Real Time Web Application",
-    images: ["/szn3.png", "/szn2.png"],
+    title: 'Sazin Construction Ltd – Real Time Web Application',
+    images: ['/szn3.png', '/szn2.png'],
     description:
-      "A real-time construction company website to showcase services, projects, and company news with SEO optimization.",
+      'A real-time construction company website to showcase services, projects, and company news with SEO optimization.',
     features: [
-      "Service & project showcase.",
-      "Real-time updates.",
-      "SEO-friendly architecture.",
-      "Secure authentication.",
-      "Fully responsive design.",
-      "Modern UI & smooth interaction.",
+      'Service & project showcase.',
+      'Real-time updates.',
+      'SEO-friendly architecture.',
+      'Secure authentication.',
+      'Fully responsive design.',
+      'Modern UI & smooth interaction.',
     ],
     technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "Express.js",
-      "MongoDB",
-      "REST API",
-      "Authentication",
+      'Next.js',
+      'Tailwind CSS',
+      'Express.js',
+      'MongoDB',
+      'REST API',
+      'Authentication',
     ],
     frontend:
-      "https://github.com/developerTamanna/sazin-group-construction-Ltd",
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd',
     backend:
-      "https://github.com/developerTamanna/sazin-group-construction-Ltd-backend",
-    live: "https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/",
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    live: 'https://sazin-group-construction-ltd.vercel.app/Services/Civil-construction/',
   },
   {
     id: 4,
-    title: "Sazin Construction LTD – Admin Dashboard User Manual",
-    images: ["/sznadmin1.png", "/sznadmin2.png"],
+    title: 'Sazin Construction LTD – Admin Dashboard User Manual',
+    images: ['/sznadmin1.png', '/sznadmn4.png'],
     description:
-      "Admin user manual for Sazin Construction LTD website. This guide explains how administrators can access the dashboard, manage users, and assign new admin roles securely. email: marufahmmed16@gmail.com pass: Maruf2131@",
+      'Admin user manual for Sazin Construction LTD website. This guide explains how administrators can access the dashboard, manage users, and assign new admin roles securely. email: marufahmmed16@gmail.com pass: Maruf2131@',
 
     features: [
-      "Admin dashboard access with secure login.",
-      "Default admin credentials provided for initial access.",
-      "Ability to register new admin accounts.",
-      "Existing admin approval required to activate new admin users.",
-      "Role-based access control for managing projects and content.",
-      "Real-time admin management workflow.",
+      'Admin dashboard access with secure login.',
+      'Default admin credentials provided for initial access.',
+      'Ability to register new admin accounts.',
+      'Existing admin approval required to activate new admin users.',
+      'Role-based access control for managing projects and content.',
+      'Real-time admin management workflow.',
     ],
     technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "Firebase Authentication",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT Authentication",
+      'Next.js',
+      'Tailwind CSS',
+      'Firebase Authentication',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT Authentication',
     ],
     frontend:
-      "https://github.com/developerTamanna/sazin-group-construction-Ltd-backend",
-    backend: "https://github.com/developerTamanna/sazin-group-construction-Ltd",
-    live: "https://sazin-group-construction-ltd-backen.vercel.app/",
+      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
+    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
+    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+  },
+  {
+    id: 5,
+    title: 'Life Care Hospital – Frontend Healthcare Application',
+    images: ['/lifecare6.png', '/lll.png'],
+    description:
+      'A responsive frontend healthcare website showcasing doctor details, appointment booking, price chart visualization, and cancellation functionality. Designed for seamless user experience.',
+
+    features: [
+      'Responsive UI optimized for all devices.',
+      'View detailed doctor profiles and availability.',
+      'Book and cancel appointments easily.',
+      'Price displayed in chart format for better clarity.',
+      'User-friendly navigation and smooth interactions.',
+    ],
+    technologies: ['React', 'Tailwind CSS', 'React Router', 'Chart.js'],
+    frontend: 'https://github.com/developerTamanna/life-care-frontend',
+    backend: null,
+    live: 'https://life-care-peach.vercel.app/',
+  },
+
+  {
+    id: 6,
+    title: 'Real-Time Chat Application – Next.js & Bun',
+    images: ['/chatapp1.png', '/chatapp2.png'],
+    description:
+      'Real-time chat app built with Next.js and Bun runtime. Users can search by username, send chat requests, accept invitations, and exchange messages instantly.',
+
+    features: [
+      'User search by username.',
+      'Send and accept chat requests.',
+      'Real-time two-way messaging.',
+      'Smooth UI with instant updates.',
+      'Secure authentication and data handling.',
+    ],
+    technologies: [
+      'Next.js',
+      'Bun runtime',
+      'Tailwind CSS',
+      'Firebase / WebSocket (for real-time communication)',
+    ],
+    frontend: 'https://github.com/developerTamanna/real-time-chat-frontend',
+    backend: 'https://github.com/developerTamanna/real-time-chat-backend',
+    live: 'https://real-time-chat-app.vercel.app/',
   },
 ];
 
@@ -145,7 +189,7 @@ export default function ProjectDetailsPage() {
         <div className="max-w-6xl mx-auto">
           {/* Back */}
           <button
-            onClick={() => router.push("/")}
+            onClick={() => router.push('/')}
             className="mb-8 text-gray-600 hover:text-[#007F73]"
           >
             ← Back to Projects
