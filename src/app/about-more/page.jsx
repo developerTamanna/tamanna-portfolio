@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 export default function AboutMore() {
   const slideImages = [
-    '/images/cert1.jpg',
-    '/images/cert2.jpg',
-    '/images/cert3.jpg',
-    '/images/cert4.jpg',
-    '/images/cert5.jpg',
+    '/quizephoto.jpeg',
+    '/cropdigital.jpeg',
+    '/projectshowphoto.jpeg',
+    'projectshowpricephoto.jpeg',
+    '/intership.jpeg',
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
