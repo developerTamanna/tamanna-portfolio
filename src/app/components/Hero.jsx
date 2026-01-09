@@ -1,22 +1,21 @@
-"use client";
-
-import Image from "next/image";
-import { useEffect, useRef } from "react";
+'use client';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import {
   FaFacebook,
   FaGithub,
   FaInstagram,
   FaLinkedin,
   FaTwitter,
-} from "react-icons/fa";
-import Typed from "typed.js";
+} from 'react-icons/fa';
+import Typed from 'typed.js';
 
 export default function Hero() {
   const typedRef = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: ["Frontend Developer", "Backend Developer", "Web Designer"],
+      strings: ['Frontend Developer', 'Backend Developer', 'Web Designer'],
       typeSpeed: 80,
       backSpeed: 80,
       backDelay: 1200,
@@ -27,7 +26,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen pt-24 md:pt-0 pb-10 md:pb-0 flex items-center">
+    <section
+      id="home"
+      className="min-h-screen pt-24 md:pt-0 pb-10 md:pb-0 flex items-center"
+    >
       <div
         className="
           max-w-7xl mx-auto md:px-10 px-6
@@ -47,7 +49,7 @@ export default function Hero() {
           </h1>
 
           <h3 className="text-2xl md:text-3xl mt-3 text-gray-700">
-            And I&apos;m a{" "}
+            And I&apos;m a{' '}
             <span ref={typedRef} className="text-teal-700 font-semibold"></span>
           </h3>
 
@@ -60,23 +62,23 @@ export default function Hero() {
             {[
               {
                 icon: <FaLinkedin />,
-                link: "https://www.linkedin.com/in/tamanna-akter57/",
+                link: 'https://www.linkedin.com/in/tamanna-akter57/',
               },
               {
                 icon: <FaFacebook />,
-                link: "https://web.facebook.com/tamanna.sultana.sathi.2025/",
+                link: 'https://web.facebook.com/tamanna.sultana.sathi.2025/',
               },
               {
                 icon: <FaTwitter />,
-                link: "https://x.com/TamannaAkt43608",
+                link: 'https://x.com/TamannaAkt43608',
               },
               {
                 icon: <FaInstagram />,
-                link: "https://www.instagram.com/astamanna576/",
+                link: 'https://www.instagram.com/astamanna576/',
               },
               {
                 icon: <FaGithub />,
-                link: "https://github.com/developerTamanna",
+                link: 'https://github.com/developerTamanna',
               },
             ].map((item, i) => (
               <a

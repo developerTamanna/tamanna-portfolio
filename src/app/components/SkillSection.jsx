@@ -87,8 +87,10 @@ export default function AnimatedSkills() {
                 <h3 className="text-lg font-semibold text-gray-800">
                   {category.category}
                 </h3>
-                <span className="text-xs font-medium px-3 py-1 rounded-full
-                                 bg-teal-50 text-[#007F73] border border-teal-200">
+                <span
+                  className="text-xs font-medium px-3 py-1 rounded-full
+                                 bg-teal-50 text-[#007F73] border border-teal-200"
+                >
                   {category.proficiency}
                 </span>
               </div>
@@ -124,14 +126,32 @@ export default function AnimatedSkills() {
 
           <div className="space-y-6 max-w-2xl mx-auto">
             {[
-              { skill: 'Frontend Development', level: 90, tech: 'React, JS, HTML, CSS' },
-              { skill: 'Backend Development', level: 75, tech: 'Node.js, Express' },
-              { skill: 'Database & Auth', level: 70, tech: 'MongoDB, Firebase' },
-              { skill: 'Tools & Deployment', level: 85, tech: 'Git, Vercel, Netlify' },
+              {
+                skill: 'Frontend Development',
+                level: 90,
+                tech: 'React, JS, HTML, CSS',
+              },
+              {
+                skill: 'Backend Development',
+                level: 75,
+                tech: 'Node.js, Express',
+              },
+              {
+                skill: 'Database & Auth',
+                level: 70,
+                tech: 'MongoDB, Firebase',
+              },
+              {
+                skill: 'Tools & Deployment',
+                level: 85,
+                tech: 'Git, Vercel, Netlify',
+              },
             ].map((item, i) => (
               <div key={i}>
                 <div className="flex justify-between mb-1">
-                  <span className="font-medium text-gray-700">{item.skill}</span>
+                  <span className="font-medium text-gray-700">
+                    {item.skill}
+                  </span>
                   <span className="text-sm font-semibold text-[#007F73]">
                     {item.level}%
                   </span>

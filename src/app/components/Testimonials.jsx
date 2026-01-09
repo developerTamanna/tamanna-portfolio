@@ -1,3 +1,4 @@
+'use client';
 export default function Testimonials() {
   const list = [
     { img: '/t1.jpg', name: 'Marilyn' },

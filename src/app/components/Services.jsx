@@ -1,3 +1,4 @@
+'use client';
 import { FaCode, FaMobileAlt, FaPalette } from 'react-icons/fa';
 
 export default function Services({ hideTitle = false }) {
@@ -21,9 +22,7 @@ export default function Services({ hideTitle = false }) {
 
   return (
     <section id="services" className="py-20">
-
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        
         {!hideTitle && (
           <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
             My <span className="text-[#007F73]">Services</span>
@@ -39,18 +38,13 @@ export default function Services({ hideTitle = false }) {
                          hover:border-[#007F73] hover:scale-105
                          transition-all duration-300"
             >
- 
               <div className="flex justify-center mb-5 text-6xl text-[#007F73]">
                 {service.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-3">
-                {service.title}
-              </h3>
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
 
-              <p className="text-gray-700">
-                {service.description}
-              </p>
+              <p className="text-gray-700">{service.description}</p>
             </div>
           ))}
         </div>

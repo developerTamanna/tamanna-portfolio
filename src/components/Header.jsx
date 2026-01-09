@@ -26,7 +26,11 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
-          {open ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+          {open ? (
+            <FiX className="text-3xl" />
+          ) : (
+            <FiMenu className="text-3xl" />
+          )}
         </button>
 
         {/* Navigation menu */}
