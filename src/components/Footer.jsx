@@ -7,7 +7,7 @@ export default function Footer() {
 
       {/* Footer Text */}
       <p className="text-base text-gray-700 relative z-10">
-        © Tamanna Akter - All Rights Reserved
+        ©Tamanna Akter. Last updated on january, 2026{' '}
       </p>
     </footer>
   );
