@@ -4,17 +4,22 @@ import { useState } from 'react';
 export default function AboutMore() {
   // Slider images: বিভিন্ন ইভেন্টের ছবি
   const eventImages = [
-    '/quizephoto.jpeg', // ICT Quiz Prize photo
-    '/cropdigital.jpeg', // Digital Skill EDGE certificate photo
-    '/projectshowphoto.jpeg', // Project Showcasing prize photo
-    '/projectshowpricephoto.jpeg', // Project prize money photo
-    '/intership.jpeg', // Internship certificate/photo
+    '/quizephoto.jpeg',
+    '/cropdigital.jpeg',
+    '/projectshowphoto.jpeg',
+    '/projectshowpricephoto.jpeg',
+    '/intership.jpeg',
   ];
 
   // Certificates images: সার্টিফিকেট গুলো
   const certificateList = [
     {
-      img: '/edgecertifecate.jpeg', // সার্টিফিকেট ছবি
+      img: '/projectshowchaingcerti.jpeg',
+      title: 'Project Showcasing certificate (2025)',
+      desc: 'Received cash prize and certificate for project showcasing full stack project. sylhet international university',
+    },
+    {
+      img: '/edgecertifecate.jpeg',
       title: 'Digital Skill EDGE Certificate (2024)',
       desc: 'Received from ICT Division Bangladesh Computer Council.',
     },
@@ -33,11 +38,7 @@ export default function AboutMore() {
       title: 'Programming hero MERN stack development  (2025)',
       desc: 'Received  certificate for course Completed.',
     },
-    {
-      img: '/cert3.jpeg',
-      title: 'Project Showcasing certificate (2025)',
-      desc: 'Received cash prize and certificate for project showcasing full stack project. sylhet international university',
-    },
+
     {
       img: '/cert3.jpeg',
       title: 'spoken English certificate (2025)',
@@ -48,12 +49,12 @@ export default function AboutMore() {
   // Awards & Recognition ডাটা
   const awardsRecognition = [
     {
-      img: '/images/award1.jpg', // এখানে Award সম্পর্কিত ছবি বসাবে
+      img: '/ict.jpeg', // এখানে Award সম্পর্কিত ছবি বসাবে
       title: 'ICT Quiz Competition Prize (2025)',
       desc: 'Won prize in ICT Quiz at Sylhet International University.',
     },
     {
-      img: '/images/award2.jpg',
+      img: '/projectshowpricephoto.jpeg',
       title: 'Project Showcasing Prize (2025)',
       desc: 'Received cash prize and certificate for project showcasing.',
     },
@@ -71,7 +72,7 @@ export default function AboutMore() {
   // Co & Extra-Curricular Awards ডাটা
   const coExtraAwards = [
     {
-      img: '/images/extra1.jpg',
+      img: '/sp.jpeg',
       title: 'Best Spoken English Student Award',
       desc: 'Received Best Student award from AIMS Academy for spoken English.',
     },
