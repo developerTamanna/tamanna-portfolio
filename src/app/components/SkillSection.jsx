@@ -3,29 +3,47 @@ import { motion } from 'framer-motion';
 
 const skillsByCategory = [
   {
-    category: 'Expertise',
-    skills: ['JavaScript', 'React.js', 'Firebase', 'Tailwind', 'HTML5', 'CSS'],
-    proficiency: 'Advanced',
+    category: 'Frontend Development',
+    skills: [
+      'HTML',
+      'CSS',
+      'Tailwind CSS',
+      'JavaScript',
+      'React',
+      'Next.js',
+      'TypeScript',
+    ],
+    proficiency: 'Expert Level',
+    description:
+      'Experienced in building responsive, modern, and dynamic web interfaces using React and Tailwind CSS.',
   },
   {
-    category: 'Comfortable',
-    skills: ['Node.js', 'Chrome DevTools', 'DaisyUI'],
-    proficiency: 'Proficient',
+    category: 'Backend Development',
+    skills: ['Node.js', 'Express.js', 'RESTful APIs'],
+    proficiency: 'Intermediate Level',
+    description:
+      'Capable of creating secure and optimized backend systems and APIs for full-stack applications.',
   },
   {
-    category: 'Familiar',
-    skills: ['Express.js', 'MongoDB', 'JWT', 'Axios', 'React Query'],
-    proficiency: 'Intermediate',
+    category: 'Database Management',
+    skills: ['MySQL', 'MongoDB'],
+    proficiency: 'Intermediate Level',
+    description:
+      'Proficient in designing and managing relational and NoSQL databases with efficient data modeling.',
   },
   {
-    category: 'Tools',
-    skills: ['Git & GitHub', 'npm', 'VS Code', 'Netlify', 'Vercel'],
-    proficiency: 'Tools',
+    category: 'Artificial Intelligence & Machine Learning',
+    skills: ['Python', 'TensorFlow', 'Scikit-learn'],
+    proficiency: 'Intermediate Level',
+    description:
+      'Focused on developing intelligent systems and predictive models using supervised and unsupervised learning techniques.',
   },
   {
-    category: 'Soft Skills',
-    skills: ['Hardworking', 'Collaborative mindset', 'Communication'],
-    proficiency: 'Professional',
+    category: 'Tools & Version Control',
+    skills: ['Git', 'GitHub', 'VS Code', 'Figma'],
+    proficiency: 'Advanced Level',
+    description:
+      'Skilled at using modern tools and workflows for development, design, and project collaboration.',
   },
 ];
 
@@ -75,7 +93,7 @@ export default function AnimatedSkills() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {skillsByCategory.slice(0, 4).map((category, i) => (
+          {skillsByCategory.map((category, i) => (
             <motion.div
               key={i}
               variants={itemVariants}
@@ -83,17 +101,22 @@ export default function AnimatedSkills() {
               className="bg-white rounded-2xl p-6 border border-gray-200
                          hover:border-[#007F73] transition shadow-sm hover:shadow-md"
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-2">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {category.category}
                 </h3>
                 <span
                   className="text-xs font-medium px-3 py-1 rounded-full
-                                 bg-teal-50 text-[#007F73] border border-teal-200"
+                  bg-teal-50 text-[#007F73] border border-teal-200"
                 >
                   {category.proficiency}
                 </span>
               </div>
+
+              {/* Description */}
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                {category.description}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, idx) => (
@@ -129,22 +152,27 @@ export default function AnimatedSkills() {
               {
                 skill: 'Frontend Development',
                 level: 90,
-                tech: 'React, JS, HTML, CSS',
+                tech: 'HTML, CSS, Tailwind, JavaScript, React, Next.js, TypeScript',
               },
               {
                 skill: 'Backend Development',
                 level: 75,
-                tech: 'Node.js, Express',
+                tech: 'Node.js, Express.js, RESTful APIs',
               },
               {
-                skill: 'Database & Auth',
+                skill: 'Database Management',
                 level: 70,
-                tech: 'MongoDB, Firebase',
+                tech: 'MySQL, MongoDB',
               },
               {
-                skill: 'Tools & Deployment',
+                skill: 'AI & Machine Learning',
+                level: 65,
+                tech: 'Python, TensorFlow, Scikit-learn',
+              },
+              {
+                skill: 'Tools & Version Control',
                 level: 85,
-                tech: 'Git, Vercel, Netlify',
+                tech: 'Git, GitHub, VS Code, Figma',
               },
             ].map((item, i) => (
               <div key={i}>
@@ -167,31 +195,6 @@ export default function AnimatedSkills() {
                   />
                 </div>
               </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Soft Skills */}
-        <motion.div
-          className="mt-20 bg-teal-50 rounded-2xl p-8 border border-teal-100"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Professional Attributes
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {skillsByCategory[4].skills.map((skill, i) => (
-              <motion.div
-                key={i}
-                className="px-5 py-3 bg-white rounded-xl border border-teal-200
-                           text-[#007F73] font-medium shadow-sm"
-                whileHover={{ scale: 1.05, y: -2 }}
-              >
-                {skill}
-              </motion.div>
             ))}
           </div>
         </motion.div>

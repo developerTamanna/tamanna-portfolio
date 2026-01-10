@@ -9,6 +9,7 @@ export default function AboutMore() {
     '/projectshowphoto.jpeg',
     '/projectshowpricephoto.jpeg',
     '/intership.jpeg',
+    '/programmingcontest.jpeg',
   ];
 
   // Certificates images: সার্টিফিকেট গুলো
@@ -29,12 +30,12 @@ export default function AboutMore() {
       desc: 'Completed 6 months internship in web development.',
     },
     {
-      img: '/cert3.jpeg',
+      img: '/dip.jpeg',
       title: 'Diploma in Computer Science & Engineering (2024)',
       desc: 'Completed 4-year Diploma from Sylhet polytecnic institute.',
     },
     {
-      img: '/cert3.jpeg',
+      img: '/programming.jpg',
       title: 'Programming hero MERN stack development  (2025)',
       desc: 'Received  certificate for course Completed.',
     },
