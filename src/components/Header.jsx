@@ -5,6 +5,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -14,9 +15,16 @@ export default function Header() {
     { name: 'Contact', path: '/contact' },
   ];
 
+  const moreItems = [
+    { name: 'Academic Projects', path: '/more/academic-projects' },
+    { name: 'Work Experience', path: '/more/work-experience' },
+    { name: 'Education', path: '/more/education' },
+    { name: 'Personal Blog', path: '/more/blog' },
+    { name: 'Profile', path: '/more/profile' },
+  ];
+
   return (
     <header className="fixed top-0 w-full z-50 bg-[#007F73] text-white shadow-md">
-      {/* 7xl wrapper */}
       <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
         <h1 className="text-3xl font-bold">Tamanna Akter</h1>
 
@@ -33,7 +41,7 @@ export default function Header() {
           )}
         </button>
 
-        {/* Navigation menu */}
+        {/* Navigation */}
         <nav
           className={`absolute md:static top-[72px] right-0
           bg-[#007F73] flex flex-col md:flex-row
@@ -54,6 +62,34 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
+
+          {/* More Info Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className="text-lg font-semibold py-3 md:py-0 hover:text-black transition-colors duration-300"
+            >
+              More Info
+            </button>
+
+            {moreOpen && (
+              <div className="absolute md:top-10 md:left-0 bg-[#007F73] shadow-lg rounded-md w-52 flex flex-col">
+                {moreItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    onClick={() => {
+                      setMoreOpen(false);
+                      setOpen(false);
+                    }}
+                    className="px-4 py-3 hover:bg-white hover:text-black transition"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
       </div>
     </header>
