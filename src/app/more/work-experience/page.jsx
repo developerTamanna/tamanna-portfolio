@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 const ProjectsPage = () => {
   // Work Experience data
@@ -29,7 +30,7 @@ const ProjectsPage = () => {
   // Projects data with GitHub links
   const projects = [
     {
-      id: 1,
+      id: 3,
       title: 'Sazin – Sazin Construction Ltd.',
       description:
         'Developed a real-life construction company website with admin & client panels, focusing on scalability, performance, and clean UI.',
@@ -41,7 +42,6 @@ const ProjectsPage = () => {
         'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
       liveLink: 'https://sazin-group-construction-ltd.vercel.app/',
       companyLink: 'https://sazin.com.bd/',
-      detailsLink: '#',
       image: '/workexpriance.png',
       status: 'Completed',
     },
@@ -330,8 +330,8 @@ const ProjectsPage = () => {
                     </a>
 
                     {/* View Details Button */}
-                    <a
-                      href={project.detailsLink}
+                    <Link
+                      href={`/projects/${project.id}`}
                       className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-teal-50 transition-colors group/link"
                     >
                       <div className="flex items-center">
@@ -375,7 +375,7 @@ const ProjectsPage = () => {
                           />
                         </svg>
                       </span>
-                    </a>
+                    </Link>
                   </div>
 
                   {/* GitHub Repositories */}

@@ -34,7 +34,7 @@ const skillsByCategory = [
   {
     category: 'Artificial Intelligence & Machine Learning',
     skills: ['Python', 'TensorFlow', 'Scikit-learn'],
-    proficiency: 'Intermediate Level',
+    proficiency: 'Exploring',
     description:
       'Focused on developing intelligent systems and predictive models using supervised and unsupervised learning techniques.',
   },
@@ -166,7 +166,7 @@ export default function AnimatedSkills() {
               },
               {
                 skill: 'AI & Machine Learning',
-                level: 65,
+                level: 30,
                 tech: 'Python, TensorFlow, Scikit-learn',
               },
               {

@@ -1,5 +1,6 @@
 'use client';
-import Image from 'next/image';
+
+import { FaGlobe, FaRobot, FaTrophy } from 'react-icons/fa';
 
 export default function About() {
   return (
@@ -15,30 +16,7 @@ export default function About() {
         py-20
       "
     >
-      <div
-        className="
-    relative
-    w-64 sm:w-72 md:w-80
-    aspect-4/5
-    md:max-h-[420px]
-    rounded-xl
-    border-4 border-[#007F73]
-    overflow-hidden
-    shadow-[0_0_25px_rgba(0,127,115,0.6)]
-    transition duration-500
-    hover:shadow-[0_0_35px_rgba(0,127,115,0.8)]
-  "
-      >
-        <Image
-          src="/rear-view-muslim-female-programmer-hijab-sitting-front-computer-screen_274679-44363.avif"
-          alt="About Tamanna Akter"
-          fill
-          sizes="(max-width: 768px) 16rem, (max-width: 1024px) 18rem, 20rem"
-          className="object-cover"
-          priority
-        />
-      </div>
-
+      {/* LEFT CONTENT (unchanged structure) */}
       <div className="max-w-xl text-center md:text-left">
         <h2 className="text-4xl md:text-5xl font-bold">
           About <span className="text-[#007F73]">Me</span>
@@ -46,33 +24,117 @@ export default function About() {
 
         <h3 className="text-2xl md:text-3xl mt-4 font-semibold text-gray-700">
           I&apos;m a{' '}
-          <span className="text-[#007F73]">MERN Stack Developer</span>
+          <span className="text-[#007F73]">Software Development Engineer</span>
         </h3>
 
         <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
-          MERN Stack Developer with hands-on experience in building dynamic and
-          responsive web applications using MongoDB, Express.js, React, and
-          Node.js. Skilled in creating seamless user experiences, managing
-          databases efficiently, and integrating RESTful APIs. Dedicated to
-          writing clean, maintainable code and continuously enhancing skills
-          through learning, collaboration, and real-world project development.
+          I am a Software Development Engineer with over 2 years of hands-on
+          experience in Web Development, where I have worked on real-world
+          projects and delivered professional, production-ready web applications
+          based on client requirements.
+        </p>
+
+        <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
+          I have also solved 500+ programming problems across different
+          platforms, strengthening my problem-solving and logical thinking
+          skills. Currently, I am pursuing my BSc in Computer Science &
+          Engineering and actively learning Artificial Intelligence and Machine
+          Learning to build intelligent and data-driven systems in the future.
         </p>
 
         <a
           href="/about-more"
           className="
-            inline-block mt-6
-            bg-[#007F73] text-white
-            py-3 px-6
-            rounded-full
-            font-semibold
-            shadow-md
-            hover:shadow-lg
-            transition
-          "
+      inline-block mt-6
+      bg-[#007F73] text-white
+      py-3 px-6
+      rounded-full
+      font-semibold
+      shadow-md
+      hover:shadow-lg
+      transition
+    "
         >
           Read more
         </a>
+      </div>
+
+      {/* RIGHT SKILL CARDS */}
+      <div className="w-full md:w-[420px] space-y-6">
+        {/* Web Development */}
+        <div className="bg-white rounded-xl p-6 shadow-md">
+          <h4 className="flex items-center gap-2 text-xl font-bold mb-4">
+            <FaGlobe className="text-[#007F73]" />
+            Web Development
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {[
+              'HTML',
+              'CSS',
+              'Tailwind CSS',
+              'JavaScript',
+              'React',
+              'Next.js',
+              'Firebase',
+              'MongoDB',
+              'Express',
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 text-sm border border-[#007F73] text-[#007F73] rounded-full"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* AI & ML */}
+        <div className="bg-white rounded-xl p-6 shadow-md">
+          <h4 className="flex items-center gap-2 text-xl font-bold mb-4">
+            <FaRobot className="text-[#007F73]" />
+            AI & Machine Learning{' '}
+            <span className="text-sm font-medium text-gray-500">
+              (Exploring)
+            </span>
+          </h4>
+
+          <div className="flex flex-wrap gap-2">
+            {['Python', 'Pandas', 'Data Visualization', 'ML Basics'].map(
+              (skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-sm border border-[#007F73] text-[#007F73] rounded-full"
+                >
+                  {skill}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* Problem Solving */}
+        <div className="bg-white rounded-xl p-6 shadow-md">
+          <h4 className="flex items-center gap-2 text-xl font-bold mb-4">
+            <FaTrophy className="text-[#007F73]" />
+            Problem Solving
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {[
+              'Competitive Programming',
+              'Algorithm Design',
+              'Data Structures',
+              'Problem Solving',
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 text-sm border border-[#007F73] text-[#007F73] rounded-full"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
