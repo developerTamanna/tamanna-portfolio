@@ -65,7 +65,7 @@ const projectsData = [
   {
     id: 6,
     title: 'Real Time Chat Application',
-    image: '/sznadmin2.png',
+    image: '/chatprofile.png',
     description:
       'Enterprise-level dashboard for managing operations, reports and system roles.',
     frontend:

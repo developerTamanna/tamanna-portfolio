@@ -45,7 +45,7 @@ const projects = [
   },
   {
     title: 'Real-time Chat Application using WebSocket (Solo Project)',
-    images: ['/chat1.png', '/chat2.png', '/chat3.png'],
+    images: ['/chatprofile.png', '/chatdbs.png', '/chatbigimg.png'],
     technologies: [
       {
         name: 'React',
@@ -78,7 +78,7 @@ const projects = [
   },
   {
     title: 'Machine Learning Project (Ongoing)',
-    images: ['/coming1.png', '/coming2.png', '/coming-soon.png'],
+    images: ['/pandas.png', '/UpcomingProject.png', '/inprogress.png'],
     technologies: [
       {
         name: 'Python',
