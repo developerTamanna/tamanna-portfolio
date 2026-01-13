@@ -68,10 +68,9 @@ const projectsData = [
     image: '/chatprofile.png',
     description:
       'Enterprise-level dashboard for managing operations, reports and system roles.',
-    frontend:
-      'https://github.com/developerTamanna/sazin-group-construction-Ltd-backend',
-    backend: 'https://github.com/developerTamanna/sazin-group-construction-Ltd',
-    live: 'https://sazin-group-construction-ltd-backen.vercel.app/',
+    frontend: '#',
+    backend: '#',
+    live: '#',
   },
 ];
 

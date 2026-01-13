@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { useEffect, useRef, useState } from 'react';
+import { FiChevronDown, FiMenu, FiX } from 'react-icons/fi';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -23,10 +24,22 @@ export default function Header() {
     { name: 'Profile', path: '/more/profile' },
   ];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setMoreOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <header className="fixed top-0 w-full z-50 bg-[#007F73] text-white shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-        <h1 className="text-3xl font-bold">Tamanna Akter</h1>
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
+        <h1 className="text-2xl sm:text-3xl font-bold">Tamanna Akter</h1>
 
         {/* Mobile menu button */}
         <button
@@ -57,23 +70,35 @@ export default function Header() {
               key={item.name}
               href={item.path}
               onClick={() => setOpen(false)}
-              className="text-lg font-semibold py-3 md:py-0 hover:text-black transition-colors duration-300"
+              className="text-lg font-semibold py-3 md:py-0 hover:text-black transition-colors duration-300 w-full md:w-auto text-center md:text-left px-4 md:px-0"
             >
               {item.name}
             </Link>
           ))}
 
           {/* More Info Dropdown */}
-          <div className="relative">
+          <div className="relative w-full md:w-auto" ref={dropdownRef}>
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="text-lg font-semibold py-3 md:py-0 hover:text-black transition-colors duration-300"
+              className="flex items-center justify-center gap-1 text-lg font-semibold py-3 md:py-0 hover:text-black transition-colors duration-300 w-full md:w-auto px-4 md:px-0"
             >
               More Info
+              <FiChevronDown
+                className={`transition-transform duration-300 ${
+                  moreOpen ? 'rotate-180' : 'rotate-0'
+                }`}
+              />
             </button>
 
             {moreOpen && (
-              <div className="absolute md:top-10 md:left-0 bg-[#007F73] shadow-lg rounded-md w-52 flex flex-col">
+              <div
+                className="absolute md:top-full md:left-1/2 md:-translate-x-1/2 lg:left-0 lg:translate-x-0 bg-[#007F73] shadow-lg rounded-md w-full md:w-52 flex flex-col z-50
+                md:mt-1
+                md:right-auto
+                md:left-1/2 md:-translate-x-1/2
+                lg:left-0 lg:translate-x-0
+                max-h-[80vh] overflow-y-auto"
+              >
                 {moreItems.map((item) => (
                   <Link
                     key={item.name}
@@ -82,7 +107,7 @@ export default function Header() {
                       setMoreOpen(false);
                       setOpen(false);
                     }}
-                    className="px-4 py-3 hover:bg-white hover:text-black transition"
+                    className="px-4 py-3 hover:bg-white hover:text-black transition text-center md:text-left"
                   >
                     {item.name}
                   </Link>
