@@ -1,22 +1,50 @@
 'use client';
-import { FaCode, FaMobileAlt, FaPalette } from 'react-icons/fa';
+import {
+  FaCode,
+  FaDatabase,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaPalette,
+  FaServer,
+} from 'react-icons/fa';
 
 export default function Services({ hideTitle = false }) {
   const services = [
     {
-      icon: <FaCode />,
-      title: 'MERN-Stack Development',
-      description: 'Dynamic, secure, and responsive web apps.',
+      icon: <FaMobileAlt />, // Responsive Web Design
+      title: 'Responsive Web Design',
+      description:
+        'Crafting responsive and visually appealing websites that adapt seamlessly to all devices.',
     },
     {
-      icon: <FaPalette />,
-      title: 'Frontend Design',
-      description: 'Clean and modern user-friendly interfaces.',
+      icon: <FaPalette />, // UI/UX Design
+      title: 'UI/UX Design',
+      description:
+        'Converting complex designs (Figma/Adobe XD) into pixel-perfect, highly interactive, and responsive user interfaces.',
     },
     {
-      icon: <FaMobileAlt />,
-      title: 'Backend & API',
-      description: 'RESTful APIs and smooth data flow.',
+      icon: <FaCode />, // MERN Stack Development
+      title: 'MERN Stack Development',
+      description:
+        'Building full-stack web applications using MongoDB, Express.js, React, Next.js, TypeScript, Tailwind and Node.js.',
+    },
+    {
+      icon: <FaServer />, // Backend Development
+      title: 'Backend Development',
+      description:
+        'Building secure and scalable server-side applications with modern architectures.',
+    },
+    {
+      icon: <FaDatabase />, // Database Design
+      title: 'Database Design',
+      description:
+        'Designing optimized and efficient database schemas with performance in mind.',
+    },
+    {
+      icon: <FaLaptopCode />, // API Development
+      title: 'API Development',
+      description:
+        'Creating clean, scalable, and well-documented RESTful APIs for applications.',
     },
   ];
 
