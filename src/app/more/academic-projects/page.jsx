@@ -153,12 +153,16 @@ const AcademicProjectsPage = () => {
         <div className="relative z-10 h-full flex items-center justify-center">
           <h1
             className="
+        block
         text-white
         text-3xl md:text-5xl
         font-serif
         tracking-wider md:tracking-widest
         text-center
         px-4
+        max-w-[90%]
+        mx-auto
+        leading-tight
       "
           >
             ACADEMIC PROJECTS
