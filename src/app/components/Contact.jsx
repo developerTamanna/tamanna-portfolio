@@ -149,8 +149,8 @@ export default function Contact() {
 
       {/* ==== Social contacts section ==== */}
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <h2 className="text-4xl font-bold mb-3">
-          <span className="text-teal-500">#</span> Contact
+        <h2 className="text-4xl font-bold mb-2 mt-6 sm:mt-8 md:mt-12 lg:mt-16">
+          <span className="text-teal-500">#</span> Find Me Online
         </h2>
         <p className="text-gray-600 mb-10">
           Connect with me through social media.
