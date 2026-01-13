@@ -60,7 +60,7 @@ export default function About() {
       </div>
 
       {/* RIGHT SKILL CARDS */}
-      <div className="w-full md:w-[420px] space-y-6">
+      <div className="w-full md:w-[480px] lg:w-[520px] space-y-6">
         {/* Web Development */}
         <div className="bg-white rounded-xl p-6 shadow-md">
           <h4 className="flex items-center gap-2 text-xl font-bold mb-4">

@@ -1,6 +1,65 @@
 'use client';
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
+import {
+  FaDiscord,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaXTwitter,
+} from 'react-icons/fa6';
+import { SiCodeforces, SiLeetcode } from 'react-icons/si';
+
+const contacts = [
+  {
+    name: 'LinkedIn',
+    value: 'tamanna-akter57',
+    icon: <FaLinkedin />,
+    link: 'https://www.linkedin.com/in/tamanna-akter57/',
+  },
+  {
+    name: 'GitHub',
+    value: 'developerTamanna',
+    icon: <FaGithub />,
+    link: 'https://github.com/developerTamanna',
+  },
+  {
+    name: 'Email',
+    value: 'astamanna57@gmail.com',
+    icon: <FaEnvelope />,
+    link: 'mailto:astamanna57@gmail.com',
+  },
+  {
+    name: 'Twitter (X)',
+    value: 'TamannaAkt43608',
+    icon: <FaXTwitter />,
+    link: 'https://x.com/TamannaAkt43608',
+  },
+  {
+    name: 'LeetCode',
+    value: 'Tamanna2',
+    icon: <SiLeetcode />,
+    link: 'https://leetcode.com/u/Tamanna2/',
+  },
+  {
+    name: 'Codeforces',
+    value: 'tamannaspp',
+    icon: <SiCodeforces />,
+    link: 'https://codeforces.com/profile/tamannaspp',
+  },
+  {
+    name: 'beecrowd (URI)',
+    value: '1132874',
+    icon: <span className="font-bold text-lg">B</span>,
+    link: 'https://judge.beecrowd.com/en/profile/1132874',
+  },
+  {
+    name: 'Discord',
+    value: 'tamannaakter_75706',
+    icon: <FaDiscord />,
+    link: '#',
+  },
+];
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -11,7 +70,7 @@ export default function Contact() {
     emailjs
       .sendForm(
         'service_xw40vop', // ✅ Service ID
-        'template_9xpiwv9', // ✅ Template ID (FIXED)
+        'template_9xpiwv9', // ✅ Template ID
         formRef.current,
         'novQt8V7g8yjik3W6' // ✅ Public Key
       )
@@ -87,6 +146,37 @@ export default function Contact() {
           </button>
         </div>
       </form>
+
+      {/* ==== Social contacts section ==== */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <h2 className="text-4xl font-bold mb-2">
+          <span className="text-teal-500">#</span> Contact
+        </h2>
+        <p className="text-gray-600 mb-10">
+          Connect with me through social media.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {contacts.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="group border border-teal-200 rounded-xl p-5 flex items-center gap-4 hover:bg-teal-50 transition"
+            >
+              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-teal-100 text-teal-600 text-2xl group-hover:scale-110 transition">
+                {item.icon}
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-800">{item.name}</h4>
+                <p className="text-sm text-gray-500">{item.value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

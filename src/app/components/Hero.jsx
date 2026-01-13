@@ -15,7 +15,12 @@ export default function Hero() {
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: ['Frontend Developer', 'Backend Developer', 'Web Designer'],
+      strings: [
+        'Software Development Engineer',
+        'Frontend Developer',
+        'MERN Stack Developer',
+        'AI & ML Explorer',
+      ],
       typeSpeed: 80,
       backSpeed: 80,
       backDelay: 1200,
@@ -54,8 +59,8 @@ export default function Hero() {
           </h3>
 
           <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
-            I craft intuitive, high-performance web applications that turn ideas
-            into digital reality using modern technologies.
+            I build modern, scalable web applications with a strong frontend
+            focus and a growing interest in AI and Machine Learning.
           </p>
 
           <div className="flex justify-center md:justify-start gap-5 mt-6 text-teal-700 text-xl md:text-2xl">
