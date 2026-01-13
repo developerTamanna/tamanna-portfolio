@@ -145,9 +145,22 @@ const AcademicProjectsPage = () => {
           priority
           className="object-cover"
         />
+
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
+
+        {/* Title */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-5xl font-serif tracking-widest">
+          <h1
+            className="
+        text-white
+        text-3xl md:text-5xl
+        font-serif
+        tracking-wider md:tracking-widest
+        text-center
+        px-4
+      "
+          >
             ACADEMIC PROJECTS
           </h1>
         </div>
