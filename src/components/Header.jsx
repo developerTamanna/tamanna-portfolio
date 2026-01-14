@@ -21,7 +21,7 @@ export default function Header() {
     { name: 'Work Experience', path: '/more/work-experience' },
     { name: 'Education', path: '/more/education' },
     { name: 'Personal Blog', path: '/more/blog' },
-    { name: 'Learning-journey', path: '/more/profile' },
+    // { name: 'Learning-journey', path: '/more/profile' },
   ];
 
   // Close dropdown when clicking outside
