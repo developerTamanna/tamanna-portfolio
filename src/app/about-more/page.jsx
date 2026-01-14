@@ -18,26 +18,31 @@ export default function AboutMore() {
       img: '/projectshowchaingcerti.jpeg',
       title: 'Project Showcasing certificate (2025)',
       desc: 'Received cash prize and certificate for project showcasing full stack project. sylhet international university',
+      link: 'https://drive.google.com/file/d/1dZ8SBGaRojlAaDB_OIZreeyurx_IK8ZL/view?usp=sharing',
     },
     {
       img: '/edgecertifecate.jpeg',
       title: 'Digital Skill EDGE Certificate (2024)',
       desc: 'Received from ICT Division Bangladesh Computer Council.',
+      link: 'https://drive.google.com/file/d/1L64XMa_aGa7J7LJkKu9Y5ZqDRAfYRo33/view?usp=sharing',
     },
     {
-      img: '/cert2.jpeg',
+      img: '/TAMANNA.jpg',
       title: 'Web Development Internship Certificate (2024)',
       desc: 'Completed 6 months internship in web development.',
+      link: 'https://drive.google.com/file/d/1HGM584P_Y0iOzSXRzKIwYFQJTi4X1e-s/view?usp=sharing',
     },
     {
       img: '/dip.jpeg',
       title: 'Diploma in Computer Science & Engineering (2024)',
       desc: 'Completed 4-year Diploma from Sylhet polytecnic institute.',
+      link: 'https://drive.google.com/file/d/1aK6ydusF5DTKbSqEOzvnL0Z_gz4es7EA/view?usp=sharing',
     },
     {
       img: '/programming.jpg',
       title: 'Programming hero MERN stack development  (2025)',
       desc: 'Received  certificate for course Completed.',
+      link: 'https://drive.google.com/file/d/1LF1v-air4kuEaIhRpa6q4gPcqq-wyYQ4/view?usp=sharing',
     },
 
     {
@@ -182,9 +187,53 @@ export default function AboutMore() {
                 {cert.title}
               </h4>
               <p className="text-gray-700 mb-4">{cert.desc}</p>
-              <button className="self-start bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition">
-                Show Now
-              </button>
+              {cert.link ? (
+                // ✅ Active button
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start min-w-[120px] bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition text-center"
+                >
+                  Show Now
+                </a>
+              ) : (
+                // ❌ Disabled button with responsive tooltip
+                <div className="relative inline-flex group self-start">
+                  <button
+                    disabled
+                    className="min-w-[120px] flex items-center justify-center gap-2 px-4 py-2 rounded bg-gray-300 text-gray-600 cursor-not-allowed"
+                  >
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    Show Now
+                  </button>
+
+                  {/* Tooltip */}
+                  <span
+                    className="
+        absolute
+        bottom-full
+        mb-2
+        left-1/2
+        -translate-x-1/2
+        z-20
+        whitespace-nowrap
+        rounded-md
+        bg-red-500
+        px-3
+        py-1
+        text-xs
+        text-white
+        opacity-0
+        group-hover:opacity-100
+        transition
+        pointer-events-none
+      "
+                  >
+                    Certificate will be added soon
+                  </span>
+                </div>
+              )}
             </div>
           ))}
         </div>

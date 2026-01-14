@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import { FaGlobe, FaRobot, FaTrophy } from 'react-icons/fa';
 
 export default function About() {
@@ -21,19 +21,16 @@ export default function About() {
         <h2 className="text-4xl md:text-5xl font-bold">
           About <span className="text-[#007F73]">Me</span>
         </h2>
-
         <h3 className="text-2xl md:text-3xl mt-4 font-semibold text-gray-700">
           I&apos;m a{' '}
           <span className="text-[#007F73]">Software Development Engineer</span>
         </h3>
-
         <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
           I am a Software Development Engineer with over 2 years of hands-on
           experience in Web Development, where I have worked on real-world
           projects and delivered professional, production-ready web applications
           based on client requirements.
         </p>
-
         <p className="text-base md:text-lg mt-4 text-gray-600 leading-relaxed">
           I have also solved 500+ programming problems across different
           platforms, strengthening my problem-solving and logical thinking
@@ -42,21 +39,12 @@ export default function About() {
           Learning to build intelligent and data-driven systems in the future.
         </p>
 
-        <a
+        <Link
           href="/about-more"
-          className="
-      inline-block mt-6
-      bg-[#007F73] text-white
-      py-3 px-6
-      rounded-full
-      font-semibold
-      shadow-md
-      hover:shadow-lg
-      transition
-    "
+          className="inline-block mt-6 bg-[#007F73] text-white py-3 px-6 rounded-full font-semibold shadow-md hover:shadow-lg transition"
         >
           Read more
-        </a>
+        </Link>
       </div>
 
       {/* RIGHT SKILL CARDS */}
