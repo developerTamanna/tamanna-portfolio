@@ -52,7 +52,7 @@ export default function Activities() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-5xl font-bold text-[#007F73] mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#007F73] mb-3">
             Activities
           </h2>
           <div className="w-16 h-[2px] bg-[#007F73] mx-auto" />
