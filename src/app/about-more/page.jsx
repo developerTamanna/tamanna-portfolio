@@ -78,9 +78,10 @@ export default function AboutMore() {
   // Co & Extra-Curricular Awards ডাটা
   const coExtraAwards = [
     {
-      img: '/sp.jpeg',
-      title: 'Best Spoken English Student Award',
-      desc: 'Received Best Student award from AIMS Academy for spoken English.',
+      img: '/spokenteam.jpeg',
+      title: 'Best Performer – Spoken English',
+      desc: 'Awarded Best Performer twice (2×) in Spoken English program at AIMS Academy.',
+      badge: '2× Winner',
     },
   ];
 
@@ -310,7 +311,14 @@ export default function AboutMore() {
                   alt={item.title}
                   className="object-cover w-full h-full hover:scale-[1.02] transition-transform duration-500"
                 />
+
+                {item.badge && (
+                  <span className="absolute top-2 right-2 bg-teal-600 text-white text-xs px-3 py-1 rounded-full shadow">
+                    {item.badge}
+                  </span>
+                )}
               </div>
+
               <h4 className="text-lg font-bold text-teal-800 mb-2">
                 {item.title}
               </h4>
