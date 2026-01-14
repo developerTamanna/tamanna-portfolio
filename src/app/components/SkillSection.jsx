@@ -66,7 +66,7 @@ const itemVariants = {
 
 export default function AnimatedSkills() {
   return (
-    <section className="py-24 bg-[#f9fafb]">
+    <section className="py-20 bg-[#f9fafb]">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <motion.div

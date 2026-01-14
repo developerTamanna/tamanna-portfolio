@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white px-4 sm:px-6">
+    <section id="contact" className="py-20 bg-white px-4 sm:px-6">
       <div className="text-center mb-14">
         <h2 className="text-3xl sm:text-5xl font-bold text-[#007F73] mb-3">
           Contact Me
