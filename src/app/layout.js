@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import './globals.css';
 
 export const metadata = {
-  title: 'Tamanna Akter - Frontend & Backend Developer',
+  title: 'Tamanna Akter - Software Development Engineer',
   description: 'Portfolio built with Next.js and Tailwind',
 };
 
