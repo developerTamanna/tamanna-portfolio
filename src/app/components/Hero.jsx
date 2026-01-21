@@ -103,7 +103,7 @@ export default function Hero() {
           </div>
 
           <a
-            href="/Tamanna Akter Full-Stack Resume.pdf"
+            href="/Tamanna Akter Full Stack Developer resume.pdf"
             download
             className="
               inline-block mt-6
