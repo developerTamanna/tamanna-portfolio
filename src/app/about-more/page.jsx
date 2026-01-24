@@ -4,9 +4,9 @@ import { useState } from 'react';
 export default function AboutMore() {
   // Slider images: বিভিন্ন ইভেন্টের ছবি
   const eventImages = [
+    '/projectshowphoto.jpeg',
     '/quizephoto.jpeg',
     '/cropdigital.jpeg',
-    '/projectshowphoto.jpeg',
     '/projectshowpricephoto.jpeg',
     '/intership.jpeg',
     '/programmingcontest.jpeg',
